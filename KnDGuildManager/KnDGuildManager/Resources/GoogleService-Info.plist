@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>794776983934-6vpketcnlr72r9mcg3kinppcadpvkgou.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.794776983934-6vpketcnlr72r9mcg3kinppcadpvkgou</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDzv8TkUy7Yk7WtkvNsHZh-AoRk36JrjL4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>794776983934</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.connorholland.KnDGuildManager</string>
+	<key>PROJECT_ID</key>
+	<string>kndguildmanager</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kndguildmanager.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:794776983934:ios:a74e2bf5286ec3c217fb2f</string>
+	<key>DATABASE_URL</key>
+	<string>https://kndguildmanager.firebaseio.com</string>
+</dict>
+</plist>
