@@ -14,8 +14,6 @@ class CreateGuildViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Actions
@@ -24,6 +22,9 @@ class CreateGuildViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
+        guard let name = guildNameTextField.text, !name.isEmpty else {return}
+        GuildController.shared.createGuild(name: name)
+        guildNameTextField.text = ""
     }
     
 
