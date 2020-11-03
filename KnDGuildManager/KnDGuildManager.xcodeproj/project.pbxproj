@@ -12,6 +12,7 @@
 		6E14EFA38C46FA23E4FC9D2F /* Pods_KnDGuildManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65D0E5DF6655BBE1E8B04C2 /* Pods_KnDGuildManagerTests.framework */; };
 		DE4A5BFA2551C7C500C74D47 /* CreateGuild.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4A5BF92551C7C500C74D47 /* CreateGuild.storyboard */; };
 		DE4A5BFF2551C8E500C74D47 /* CreateGuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A5BFE2551C8E500C74D47 /* CreateGuildViewController.swift */; };
+		DE4A5C042551DD9000C74D47 /* GuildController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A5C032551DD9000C74D47 /* GuildController.swift */; };
 		DE8FEA88254CC2C8006F19BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8FEA87254CC2C8006F19BD /* AppDelegate.swift */; };
 		DE8FEA8A254CC2C8006F19BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8FEA89254CC2C8006F19BD /* SceneDelegate.swift */; };
 		DE8FEA8F254CC2C8006F19BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8FEA8D254CC2C8006F19BD /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		D3C8E681D4CD605BCBB15621 /* Pods_KnDGuildManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnDGuildManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4A5BF92551C7C500C74D47 /* CreateGuild.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateGuild.storyboard; sourceTree = "<group>"; };
 		DE4A5BFE2551C8E500C74D47 /* CreateGuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGuildViewController.swift; sourceTree = "<group>"; };
+		DE4A5C032551DD9000C74D47 /* GuildController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildController.swift; sourceTree = "<group>"; };
 		DE8FEA84254CC2C8006F19BD /* KnDGuildManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnDGuildManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8FEA87254CC2C8006F19BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8FEA89254CC2C8006F19BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8FEAF7254CC8C6006F19BD /* PlayerController.swift */,
+				DE4A5C032551DD9000C74D47 /* GuildController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF05058254E0F700048BF7F /* LoginViewController.swift in Sources */,
+				DE4A5C042551DD9000C74D47 /* GuildController.swift in Sources */,
 				DE8FEA88254CC2C8006F19BD /* AppDelegate.swift in Sources */,
 				DEB6D58E2550A97A00E70EA1 /* ProfileViewController.swift in Sources */,
 				DE8FEAEA254CC5CB006F19BD /* Player.swift in Sources */,

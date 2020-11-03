@@ -48,7 +48,6 @@ class PlayerController {
     
     // MARK: - Other Methods
     
-    
     //Log in with email and password
     func signIn(email: String, pass: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: pass) { (result, err) in
@@ -71,9 +70,7 @@ class PlayerController {
                 let result = Result {
                     try document?.data(as: Player.self)
                 }
-                
                 switch result {
-                
                 case .success(let player):
                     if let player = player {
                         completion(.success(player))

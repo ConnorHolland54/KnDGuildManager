@@ -14,4 +14,7 @@ struct StringConstants {
     static var currentGuild = "currentGuild"
     static var guilds = "Guilds"
     static var players = "Players"
+    static var founder = "founder"
+    static var members = "members"
+    static var requests = "requests"
 }
