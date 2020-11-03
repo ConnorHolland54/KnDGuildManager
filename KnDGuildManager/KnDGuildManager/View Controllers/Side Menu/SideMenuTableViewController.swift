@@ -29,6 +29,7 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             print("Create Guild")
+            self.performSegue(withIdentifier: "createGuild", sender: self)
         }
         tableView.deselectRow(at: indexPath, animated: false)
     }

@@ -67,10 +67,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="eyP-OY-YHC"/>
+                    <connections>
+                        <segue destination="Vt6-8l-ExI" kind="show" identifier="createGuild" id="KfW-tm-dbG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Doi-49-7Ud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2778" y="177"/>
+        </scene>
+        <!--CreateGuild-->
+        <scene sceneID="8e9-VP-BfB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateGuild" id="Vt6-8l-ExI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3mY-Kt-tqK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFi-Yv-WBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3330" y="-254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SMD-ck-504">

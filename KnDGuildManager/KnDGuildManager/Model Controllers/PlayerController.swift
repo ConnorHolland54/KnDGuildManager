@@ -41,12 +41,8 @@ class PlayerController {
                         return completion(success)
                     }
                 }
-                
-                
             }
         }
-        
-        
     }
     
     
@@ -65,7 +61,43 @@ class PlayerController {
         }
     }
     
-    //Checks if player already exists. If they dont, then create new player and if they do, just sign in.
+    //converts uid to player object
+    func convertUIDToPlayer(uid: String, completion: @escaping (Result<Player,Error>) -> Void) {
+        db.document(uid).getDocument { (document, err) in
+            if let err = err {
+                print(err.localizedDescription)
+            } else {
+                
+                let result = Result {
+                    try document?.data(as: Player.self)
+                }
+                
+                switch result {
+                
+                case .success(let player):
+                    if let player = player {
+                        completion(.success(player))
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    completion(.failure(err))
+                }
+            }
+        }
+    }
+    
+    //Fetch current player
+    func fetchCurrentPlayer() {
+        convertUIDToPlayer(uid: Auth.auth().currentUser!.uid) { (result) in
+            switch result {
+            case .success(let player):
+                print(player)
+                self.currentPlayer = player
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 
     
     
