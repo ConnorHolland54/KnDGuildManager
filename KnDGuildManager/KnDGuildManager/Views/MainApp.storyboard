@@ -58,6 +58,23 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="jXC-w3-oG8" style="IBUITableViewCellStyleDefault" id="gUD-KN-NYv">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gUD-KN-NYv" id="eDe-1g-6En">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Guilds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jXC-w3-oG8">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -69,6 +86,7 @@
                     <navigationItem key="navigationItem" id="eyP-OY-YHC"/>
                     <connections>
                         <segue destination="Vt6-8l-ExI" kind="show" identifier="createGuild" id="KfW-tm-dbG"/>
+                        <segue destination="ZX2-qd-2y1" kind="show" identifier="guilds" id="wgd-rk-TMw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Doi-49-7Ud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -84,6 +102,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFi-Yv-WBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3330" y="-254"/>
+        </scene>
+        <!--Guilds-->
+        <scene sceneID="nbb-ZG-4Xd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Guilds" id="ZX2-qd-2y1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zAy-mf-BjW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P6C-ft-QCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3500" y="-149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SMD-ck-504">

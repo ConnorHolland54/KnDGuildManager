@@ -30,8 +30,28 @@ class GuildController {
     
     //Read
     //Fetch all guilds
-    func fetchGuilds() {
-        
+    func fetchGuilds(completion: @escaping (Bool) -> Void) {
+        guilds = []
+        db.getDocuments { (snapshot, err) in
+            if let err = err {
+                print(err.localizedDescription)
+            } else {
+                for document in snapshot!.documents {
+                    let result = Result {
+                        try document.data(as: Guild.self)
+                    }
+                    switch result {
+                    case .success(let guild):
+                        if let guild = guild {
+                            self.guilds.append(guild)
+                        }
+                    case .failure(let err):
+                        print(err.localizedDescription)
+                    }
+                }  
+            }
+            completion(!self.guilds.isEmpty)
+        }
     }
     
     
