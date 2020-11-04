@@ -7,6 +7,7 @@
 
 import UIKit
 import SideMenu
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
@@ -15,6 +16,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuSetup()
+        PlayerController.shared.fetchCurrentPlayer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     // MARK: - Helper Methods
