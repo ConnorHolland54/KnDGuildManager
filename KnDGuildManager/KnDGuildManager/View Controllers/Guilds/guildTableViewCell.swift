@@ -21,7 +21,14 @@ class guildTableViewCell: UITableViewCell {
     
 
     @IBAction func joinButtonTapped(_ sender: Any) {
-        GuildController.shared.request(guildName: guild!.name)
+        
+        if joinButtonTapped.title(for: .normal) == "Request to join" {
+            GuildController.shared.request(guildName: guild!.name)
+            joinButtonTapped.setTitle("Cancel", for: .normal)
+        } else if joinButtonTapped.title(for: .normal) == "Cancel" {
+            GuildController.shared.cancelRequest(guildName: guild!.name)
+            joinButtonTapped.setTitle("Request to join", for: .normal)
+        }
     }
     
     
@@ -31,11 +38,14 @@ class guildTableViewCell: UITableViewCell {
             
             GuildController.shared.checkRequests(guildName: guild.name) { (success) in
                 if success {
-                    self.joinButtonTapped.setTitle("Requested", for: .normal)
-                    self.joinButtonTapped.isEnabled = false
+                    self.joinButtonTapped.setTitle("Cancel", for: .normal)
+//                    self.joinButtonTapped.isEnabled = false
                 }
             }
             
+            if PlayerController.shared.currentPlayer?.currentGuild != "" {
+                joinButtonTapped.isHidden = true
+            }
             
             
             nameLabel.text = guild.name
