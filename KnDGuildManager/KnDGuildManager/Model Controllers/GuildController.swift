@@ -54,5 +54,38 @@ class GuildController {
         }
     }
     
+    //Adds players to the requests for a specific guild
+    func request(guildName: String) {
+        
+        db.document(guildName).getDocument { (document, err) in
+            if let err = err {
+                print(err.localizedDescription)
+            } else {
+                let data = document?.data()
+                var array = data![StringConstants.requests] as? Array<Any>
+                array?.append(PlayerController.shared.currentPlayer!.uid)
+                self.db.document(guildName).updateData([StringConstants.requests: array!])
+            }
+        }
+    }
+    
+    func checkRequests(guildName: String, completion: @escaping (Bool) -> Void) {
+        db.document(guildName).getDocument { (document, err) in
+            if let err = err {
+                print(err.localizedDescription)
+            } else {
+                let data = document!.data()
+                guard var array = data![StringConstants.requests] as? Array<Any> else {return}
+                for uid in array {
+                    if uid as! String == PlayerController.shared.currentPlayer!.uid {
+                        return completion(true)
+                    }
+                }
+            }
+        }
+        
+        
+        return completion(false)
+    }
     
 }

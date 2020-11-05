@@ -19,9 +19,25 @@ class guildTableViewCell: UITableViewCell {
         }
     }
     
+
+    @IBAction func joinButtonTapped(_ sender: Any) {
+        GuildController.shared.request(guildName: guild!.name)
+    }
+    
+    
     func updateCell() {
         joinButtonTapped.backgroundColor = .green
         if let guild = guild {
+            
+            GuildController.shared.checkRequests(guildName: guild.name) { (success) in
+                if success {
+                    self.joinButtonTapped.setTitle("Requested", for: .normal)
+                    self.joinButtonTapped.isEnabled = false
+                }
+            }
+            
+            
+            
             nameLabel.text = guild.name
             
             PlayerController.shared.convertUIDToPlayer(uid: guild.founder) { (result) in
