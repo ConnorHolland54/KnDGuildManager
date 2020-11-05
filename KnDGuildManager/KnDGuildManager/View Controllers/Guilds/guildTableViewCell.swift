@@ -39,7 +39,6 @@ class guildTableViewCell: UITableViewCell {
             GuildController.shared.checkRequests(guildName: guild.name) { (success) in
                 if success {
                     self.joinButtonTapped.setTitle("Cancel", for: .normal)
-//                    self.joinButtonTapped.isEnabled = false
                 }
             }
             

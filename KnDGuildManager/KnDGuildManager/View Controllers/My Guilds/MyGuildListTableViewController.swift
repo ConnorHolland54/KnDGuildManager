@@ -1,52 +1,47 @@
 //
-//  SideMenuTableViewController.swift
+//  MyGuildListTableViewController.swift
 //  KnDGuildManager
 //
-//  Created by Connor Holland on 11/2/20.
+//  Created by Connor Holland on 11/5/20.
 //
 
 import UIKit
 
-class SideMenuTableViewController: UITableViewController {
+class MyGuildListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        GuildController.shared.fetchGuildsForSpecificPlayer { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 3
+        return GuildController.shared.myGuilds.count
     }
+
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            print("Create Guild")
-            self.performSegue(withIdentifier: "createGuild", sender: self)
-        } else if indexPath.row == 1 {
-            self.performSegue(withIdentifier: "guilds", sender: self)
-        } else if indexPath.row == 2 {
-            self.performSegue(withIdentifier: "myGuilds", sender: self)
-        }
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mgcell", for: indexPath)
+        let guild = GuildController.shared.myGuilds[indexPath.row]
+        cell.textLabel?.text = guild.name
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

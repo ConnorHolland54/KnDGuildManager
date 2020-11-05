@@ -17,6 +17,8 @@
 		DE4A5C0F25521FB400C74D47 /* GuildsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A5C0E25521FB400C74D47 /* GuildsTableViewController.swift */; };
 		DE4A5C17255223A500C74D47 /* guildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A5C16255223A500C74D47 /* guildTableViewCell.swift */; };
 		DE5BD5A52554AC3800F9EBC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BD5A42554AC3800F9EBC0 /* Extensions.swift */; };
+		DE5BD5AA2554B26F00F9EBC0 /* MyGuilds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5BD5A92554B26F00F9EBC0 /* MyGuilds.storyboard */; };
+		DE5BD5B02554B2D600F9EBC0 /* MyGuildListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BD5AF2554B2D600F9EBC0 /* MyGuildListTableViewController.swift */; };
 		DE8FEA88254CC2C8006F19BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8FEA87254CC2C8006F19BD /* AppDelegate.swift */; };
 		DE8FEA8A254CC2C8006F19BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8FEA89254CC2C8006F19BD /* SceneDelegate.swift */; };
 		DE8FEA8F254CC2C8006F19BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8FEA8D254CC2C8006F19BD /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		DE4A5C0E25521FB400C74D47 /* GuildsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsTableViewController.swift; sourceTree = "<group>"; };
 		DE4A5C16255223A500C74D47 /* guildTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guildTableViewCell.swift; sourceTree = "<group>"; };
 		DE5BD5A42554AC3800F9EBC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DE5BD5A92554B26F00F9EBC0 /* MyGuilds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyGuilds.storyboard; sourceTree = "<group>"; };
+		DE5BD5AF2554B2D600F9EBC0 /* MyGuildListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGuildListTableViewController.swift; sourceTree = "<group>"; };
 		DE8FEA84254CC2C8006F19BD /* KnDGuildManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnDGuildManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8FEA87254CC2C8006F19BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8FEA89254CC2C8006F19BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,14 @@
 				DE4A5C16255223A500C74D47 /* guildTableViewCell.swift */,
 			);
 			path = Guilds;
+			sourceTree = "<group>";
+		};
+		DE5BD5AE2554B2C100F9EBC0 /* My Guilds */ = {
+			isa = PBXGroup;
+			children = (
+				DE5BD5AF2554B2D600F9EBC0 /* MyGuildListTableViewController.swift */,
+			);
+			path = "My Guilds";
 			sourceTree = "<group>";
 		};
 		DE8FEA7B254CC2C8006F19BD = {
@@ -215,6 +227,7 @@
 				DEB6D5602550A41A00E70EA1 /* MainApp.storyboard */,
 				DE4A5BF92551C7C500C74D47 /* CreateGuild.storyboard */,
 				DE4A5C0825521F8100C74D47 /* Guilds.storyboard */,
+				DE5BD5A92554B26F00F9EBC0 /* MyGuilds.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +279,7 @@
 		DEF05056254E0F560048BF7F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DE5BD5AE2554B2C100F9EBC0 /* My Guilds */,
 				DE4A5C0D25521FA100C74D47 /* Guilds */,
 				DEB6D58C2550A96B00E70EA1 /* Profile */,
 				DEB6D5862550A8A000E70EA1 /* Side Menu */,
@@ -396,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5BD5AA2554B26F00F9EBC0 /* MyGuilds.storyboard in Resources */,
 				DEB6D5612550A41A00E70EA1 /* MainApp.storyboard in Resources */,
 				DE8FEA94254CC2C8006F19BD /* LaunchScreen.storyboard in Resources */,
 				DE4A5BFA2551C7C500C74D47 /* CreateGuild.storyboard in Resources */,
@@ -543,6 +558,7 @@
 				DE5BD5A52554AC3800F9EBC0 /* Extensions.swift in Sources */,
 				DE8FEAF8254CC8C6006F19BD /* PlayerController.swift in Sources */,
 				DE4A5C17255223A500C74D47 /* guildTableViewCell.swift in Sources */,
+				DE5BD5B02554B2D600F9EBC0 /* MyGuildListTableViewController.swift in Sources */,
 				DE8FEAF2254CC6C4006F19BD /* Guild.swift in Sources */,
 				DEB6D5662550A72B00E70EA1 /* SideMenuNavigationController.swift in Sources */,
 			);

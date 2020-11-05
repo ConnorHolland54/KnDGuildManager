@@ -15,6 +15,7 @@ class GuildController {
     static let shared = GuildController()
     let db = Firestore.firestore().collection(StringConstants.guilds)
     var guilds: [Guild] = []
+    var myGuilds: [Guild] = []
     
     // MARK: - CRUD Methods
     func createGuild(name: String) {
@@ -29,6 +30,32 @@ class GuildController {
     }
     
     //Read
+    func fetchGuildsForSpecificPlayer(completion: @escaping (Bool) -> Void) {
+        myGuilds = []
+        db.whereField(StringConstants.founder, isEqualTo: PlayerController.shared.currentPlayer?.uid).getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print(err.localizedDescription)
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let result = Result {
+                        try document.data(as: Guild.self)
+                    }
+                    
+                    switch result {
+                    case .success(let guild):
+                        if let guild = guild {
+                            self.myGuilds.append(guild)
+                        }
+                    case .failure(let err):
+                        print(err.localizedDescription)
+                    }    
+                }
+            }
+            completion(!self.myGuilds.isEmpty)
+        }
+    }
+    
     //Fetch all guilds
     func fetchGuilds(completion: @escaping (Bool) -> Void) {
         guilds = []
