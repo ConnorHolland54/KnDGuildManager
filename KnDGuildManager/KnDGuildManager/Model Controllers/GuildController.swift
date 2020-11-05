@@ -69,13 +69,35 @@ class GuildController {
         }
     }
     
+    //Cancel Request to join
+    func cancelRequest(guildName: String) {
+        db.document(guildName).getDocument { (document, err) in
+            if let err = err {
+                print(err.localizedDescription)
+            } else {
+                let data = document?.data()
+                guard var array = data![StringConstants.requests] as? Array<Any> else {return}
+                
+                var count = -1
+                for uid in array {
+                    count += 1
+                    if uid as! String == Auth.auth().currentUser!.uid {
+                        array.remove(at: count)
+                    }
+                }
+
+                self.db.document(guildName).updateData([StringConstants.requests: array])
+            }
+        }
+    }
+    
     func checkRequests(guildName: String, completion: @escaping (Bool) -> Void) {
         db.document(guildName).getDocument { (document, err) in
             if let err = err {
                 print(err.localizedDescription)
             } else {
                 let data = document!.data()
-                guard var array = data![StringConstants.requests] as? Array<Any> else {return}
+                guard let array = data![StringConstants.requests] as? Array<Any> else {return}
                 for uid in array {
                     if uid as! String == PlayerController.shared.currentPlayer!.uid {
                         return completion(true)
